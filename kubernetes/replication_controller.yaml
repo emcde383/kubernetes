@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    name: "flaskv0"
+  name: "flaskv0"
+spec:
+  replicas: 2
+  selector:
+    name: flaskv0
+#  metadata:
+#    labels:
+#      name: flaskv0
+  spec:
+    containers:
+      - image: flask_v0
+        name: flaskv0
+        ports:
+          - containerPort: 5000
